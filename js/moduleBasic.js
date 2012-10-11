@@ -19,16 +19,16 @@ var balanceModule = (function(){
   }
 
   return {
-    createBalance: function(initialBalanceAmount){
+    create: function(initialBalanceAmount){
       updateBalance(initialBalanceAmount, '+');
     },
-    getBalance: function(){
+    get: function(){
       return balance;
     },
-    increaseBalance: function(amount){
+    increase: function(amount){
       updateBalance(amount, '+');
     },
-    decreaseBalance: function(amount){
+    decrease: function(amount){
       updateBalance(amount, '-');
     },
     deleteBalance: function(){
@@ -37,11 +37,11 @@ var balanceModule = (function(){
   };
 })();
 
-balanceModule.createBalance(100000);
-console.log('new account balance: ' + balanceModule.getBalance());
-balanceModule.increaseBalance(500000);
-console.log('increase account balance: ' + balanceModule.getBalance());
-balanceModule.decreaseBalance(200000);
-console.log('decrease account balance: ' + balanceModule.getBalance());
+balanceModule.create(100000);
+console.log('new account balance: ' + balanceModule.get());
+balanceModule.increase(500000);
+console.log('increase account balance: ' + balanceModule.get());
+balanceModule.decrease(200000);
+console.log('decrease account balance: ' + balanceModule.get());
 balanceModule.deleteBalance();
-console.log('delete account balance: ' + balanceModule.getBalance());
+console.log('delete account balance: ' + balanceModule.get());

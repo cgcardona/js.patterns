@@ -7,7 +7,7 @@ var balanceModule = (function(){
     console.log(currentBalance + ' ' + operatorSymbol + ' ' + updateFigure + ' = ' + newBalanceFigure);
   }
 
-  function updateBalance(updateFigure, operatorSymbol){
+  function update(updateFigure, operatorSymbol){
     var newBalanceFigure;
 
     if(operatorSymbol == '+')
@@ -19,41 +19,41 @@ var balanceModule = (function(){
     balance = newBalanceFigure;
   }
 
-  function createBalance(initialBalanceAmount){
-    updateBalance(initialBalanceAmount, '+');
+  function create(initialBalanceAmount){
+    update(initialBalanceAmount, '+');
   }
 
   function getBalance(){
     return balance;
   }
 
-  function increaseBalance(amount){
-    updateBalance(amount, '+');
+  function increase(amount){
+    update(amount, '+');
   }
 
-  function decreaseBalance(amount){
-    updateBalance(amount, '-');
+  function decrease(amount){
+    update(amount, '-');
   }
 
   function deleteBalance(){
-    updateBalance(balance, '-');
+    update(balance, '-');
   }
 
   return {
     // variables and functions only exposed publicly through this returned object literal
-    createBalance: createBalance,
-    increaseBalance: increaseBalance,
-    decreaseBalance: decreaseBalance,
+    create: create,
+    increase: increase,
+    decrease: decrease,
     getBalance: getBalance,
     deleteBalance: deleteBalance
   };
 })();
 
-balanceModule.createBalance(100000);
+balanceModule.create(100000);
 console.log('new account balance: ' + balanceModule.getBalance());
-balanceModule.increaseBalance(500000);
+balanceModule.increase(500000);
 console.log('increase account balance: ' + balanceModule.getBalance());
-balanceModule.decreaseBalance(200000);
+balanceModule.decrease(200000);
 console.log('decrease account balance: ' + balanceModule.getBalance());
 balanceModule.deleteBalance();
 console.log('delete account balance: ' + balanceModule.getBalance());
