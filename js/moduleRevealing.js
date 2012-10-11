@@ -1,5 +1,6 @@
 'use strict';
 var balanceModule = (function(){
+  // all variables and functions are private
   var balance = 0;
 
   function logStatus(updateFigure, currentBalance, operatorSymbol, newBalanceFigure){
@@ -39,6 +40,12 @@ var balanceModule = (function(){
   }
 
   return {
+    // variables and functions only exposed publicly through this returned object literal
+    createBalance: createBalance,
+    increaseBalance: increaseBalance,
+    decreaseBalance: decreaseBalance,
+    getBalance: getBalance,
+    deleteBalance: deleteBalance
   };
 })();
 
