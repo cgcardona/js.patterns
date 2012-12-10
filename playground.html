@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Revealing module pattern</title>
+    <title>Playground</title>
   </head>
   <body>
       <div id="container">
@@ -11,6 +11,13 @@
         </ul>
       </div><!--end of container div-->
     <script src="./js/jquery.js"></script>
-    <script src='./js/moduleRevealingVariation1.js'></script>
+    <script src="./js/halloween.js"></script>
+    <script>
+      'use strict';
+      var halloween = new Halloween();
+      halloween.trickOrTreat('trick');
+      halloween.trickOrTreat('treat');
+      halloween.trickOrTreat();
+    </script>
   </body>
 </html>

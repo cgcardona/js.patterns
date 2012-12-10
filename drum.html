@@ -1,0 +1,49 @@
+<script>
+  var Drum = {
+    init:function(){
+      this.setType();
+      this.setSkinType();
+    },
+    setType:function(type){
+      this.type = type || 'djembe';
+    },
+    setSkinType:function(skinType){
+      this.skinType = skinType || 'goat';
+    },
+    createNote:function(pitch,duration){
+      this.note = this.newObject(Note);
+      this.note.init(pitch,duration);
+    },
+    newObject:function(o){
+      function F() {};
+      F.prototype = o;
+      return new F();
+    }
+  }
+  Drum.init();
+
+  var Note = {
+    init:function(pitch,duration){
+      this.setPitch(pitch);
+      this.setDuration(duration);
+      this.play();
+    },
+    setPitch:function(pitch){
+      this.pitch = pitch || 3;
+    },
+    setDuration:function(duration){
+      this.duration = duration || 8;
+    },
+    play:function(){
+      // Do amazing web based audio here
+    }
+  }
+
+  var Djembe = Drum.newObject(Drum);
+  Djembe.createNote(3,1);
+  Djembe.createNote(3,1);
+  Djembe.createNote(1,1);
+  Djembe.createNote(1,1);
+
+  console.log(Djembe);
+</script>
